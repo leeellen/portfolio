@@ -1,3 +1,4 @@
+import Header from '@/components/Header';
 import Head from 'next/head';
 
 export default function Home() {
@@ -6,6 +7,8 @@ export default function Home() {
             <Head>
                 <title>Ellen</title>
             </Head>
+
+            <Header />
         </div>
     );
 }
