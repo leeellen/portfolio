@@ -23,11 +23,11 @@ export default function ExperienceCard({ experienceData }: Props) {
             <div className="w-full px-0 md:px-10">
                 <h4 className="text-4xl font-light">{experienceData.title}</h4>
                 <p className="font-bold text-2xl mt-1">{experienceData.company}</p>
-                {/* <div className="flex space-x-2 my-2">
+                <div className="flex space-x-2 my-2">
                     {experienceData.skills.map((e) => (
                         <Image src={e} key={e.src} alt="skill" className="w-10 h-10" />
                     ))}
-                </div> */}
+                </div>
                 <p className="uppercase py-5 text-gray-300">
                     {experienceData.start} ~ {experienceData.end}
                 </p>
