@@ -1,4 +1,5 @@
 import React from 'react';
+import { StaticImageData } from 'next/image';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { css } from '@emotion/react';
@@ -15,7 +16,6 @@ import ts from 'public/images/skills/ts.png';
 import react from 'public/images/skills/react.png';
 import next from 'public/images/skills/next.png';
 import tailwind from 'public/images/skills/tailwind.png';
-import { StaticImageData } from 'next/image';
 
 export type Experiencetype = {
     icon: StaticImageData;
