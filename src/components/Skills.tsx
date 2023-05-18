@@ -3,5 +3,5 @@ import React from 'react';
 type Props = {};
 
 export default function Skills({}: Props) {
-    return <div>Skills</div>;
+    return <div className="h-screen">Skills</div>;
 }

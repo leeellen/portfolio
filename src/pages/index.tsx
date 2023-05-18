@@ -24,19 +24,19 @@ export default function Home() {
                 <About />
             </section>
 
-            <section id="experience">
+            <section id="experience" className="snap-center">
                 <Experience />
             </section>
 
-            <section id="skills">
+            <section id="skills" className="snap-center">
                 <Skills />
             </section>
 
-            <section id="projects">
+            <section id="projects" className="snap-center">
                 <Projects />
             </section>
 
-            <section id="contactme">
+            <section id="contactme" className="snap-center">
                 <ContactMe />
             </section>
         </div>
