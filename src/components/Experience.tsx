@@ -13,7 +13,7 @@ import cssIcon from 'public/images/skills/css.png';
 import js from 'public/images/skills/js.png';
 import ts from 'public/images/skills/ts.png';
 import react from 'public/images/skills/react.png';
-import next from 'public/images/skills/next.png';
+import next from 'public/images/skills/nextjs-white.png';
 import tailwind from 'public/images/skills/tailwind.png';
 
 export type Experiencetype = {
