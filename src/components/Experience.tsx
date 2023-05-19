@@ -2,7 +2,6 @@ import React from 'react';
 import { StaticImageData } from 'next/image';
 import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { css } from '@emotion/react';
 
 import ExperienceCard from './ExperienceCard';
 
