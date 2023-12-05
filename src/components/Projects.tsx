@@ -4,12 +4,19 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 type Props = {};
 
+import metaverse from 'public/images/projects/metaverse.webp';
 import daegu from 'public/images/projects/daegu.webp';
 import nlize from 'public/images/projects/nlize.webp';
 import dokdo from 'public/images/projects/dokdo.webp';
 import Link from 'next/link';
 
 const projectList = [
+    {
+        link: 'https://www.k-metavillage.com/',
+        img: metaverse,
+        title: 'METAVERSE VILLAGE',
+        desc: '#Next.js #TypeScript #Emotion #Tailwind \nMETAVERSE VILLAGE 홍보를 위한 웹사이트 구축 프로젝트로 메인 웹사이트 전체 개발을 담당했습니다.',
+    },
     {
         link: 'https://xn--2e0bu9hmpna657do1zdja.kr/',
         img: daegu,
