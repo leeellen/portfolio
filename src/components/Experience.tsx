@@ -15,6 +15,7 @@ import ts from 'public/images/skills/ts.png';
 import react from 'public/images/skills/react.png';
 import next from 'public/images/skills/nextjs-white.png';
 import tailwind from 'public/images/skills/tailwind.png';
+import { css } from '@emotion/react';
 
 export type Experiencetype = {
     icon: StaticImageData;
@@ -29,31 +30,29 @@ export type Experiencetype = {
 const experienceList = [
     {
         icon: mayday,
-        title: 'Frontend Developer',
+        title: 'Software Developer',
         company: 'MAYDAY Partners',
         skills: [html, cssIcon, ts, react, next, tailwind],
         start: '2022.03',
-        end: '',
+        end: '2023.12',
         role: [
-            '[Shakerrr Mall] SNS + 쇼핑몰 플렛폼 프로젝트 메인 사이트 전체 프론트엔드 개발',
-            '[독도체험관] 기존의 독도체험관 사이트 리뉴얼 프로젝트 메인 사이트 전체 프론트엔드 개발',
-            '[Nlize] Nlize 사이트 개발 프로젝트 메인 사이트 전체 프론트엔드 개발',
-            '[삼삼한대구여행] 대구 삼대문화권 사이트 개발 프로젝트 메인 사이트 전체 프론트엔드 개발',
+            '[Metaverse Village] Metaverse Village project front-end development',
+            '[KOVO] KOVO Korea Volleyball Federation project front-end development',
+            '[WEVENT] Online conference platform WEVENT project front-end development',
+            '[Samsamhan Daegu Travel] Daegu Three Cultural Zone Site Development Project Front-End Development',
+            '[Nlize] Nlize site development project front-end development',
+            '[Dokdo Experience Center] Front-end development for the existing Dokdo Experience Center site renewal project',
+            '[Shakerrr Mall] SNS + Shopping Mall Platform Project Main Site Front-End Development',
         ],
     },
     {
         icon: woojooin,
-        title: 'Frontend Developer',
-        company: '우주인 스포츠',
+        title: 'Software Developer',
+        company: 'WOOJOOIN Sports',
         skills: [js, ts, react, next],
         start: '2020.06',
         end: '2022.02',
-        role: [
-            '우주인 서비스 웹 버전 프론트엔드 전체 개발',
-            '우주인 파트너센터 프론트엔드 개발',
-            '재사용성이 떨어지고, 결합도가 높아 유지보수 및 에러 핸들링이 어렵던 우주인 어드민 레거시 코드를 결합도를 낮추고 에러 핸들링이 용이하도록 리팩토링',
-            '직관적이지 않은 UI와 불편한 UX를 가졌던 구조를 리팩토링하여 보다 직관적인 UI로 변경하고, UX 향상',
-        ],
+        role: ['WOOJOOIN service web version front-end development', 'WOOJOOIN Partner Center front-end development'],
     },
 ];
 
@@ -69,7 +68,19 @@ export default function Experience({}: Props) {
         >
             <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Experience</h3>
 
-            <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory h-[70%]">
+            <div
+                className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory h-[70%]"
+                // @ts-ignore
+                css={css`
+                    .box {
+                        -ms-overflow-style: none; /* IE and Edge */
+                        scrollbar-width: none; /* Firefox */
+                    }
+                    &::-webkit-scrollbar {
+                        display: none; /* Chrome, Safari, Opera*/
+                    }
+                `}
+            >
                 <Swiper
                     spaceBetween={40}
                     slidesPerView={1}

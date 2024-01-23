@@ -10,7 +10,7 @@ type Props = {
 
 export default function ExperienceCard({ experienceData }: Props) {
     return (
-        <article className="h-full flex flex-col rounded-lg items-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-auto scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#fb3131]/80 ">
+        <article className=" h-full flex flex-col rounded-lg items-center bg-[#292929] p-10 hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-auto scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#fb3131]/80 ">
             <motion.img
                 initial={{ y: -100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}

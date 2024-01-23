@@ -14,14 +14,14 @@ import antd from 'public/images/skills/antd.png';
 import Skill from './Skill';
 
 const skillList = [
-    { directionLeft: true, icon: html, percent: '80%' },
-    { directionLeft: true, icon: cssIcon, percent: '70%' },
-    { directionLeft: true, icon: js, percent: '70%' },
-    { directionLeft: true, icon: ts, percent: '50%' },
-    { directionLeft: false, icon: react, percent: '65%' },
-    { directionLeft: false, icon: next_w, percent: '60%' },
-    { directionLeft: false, icon: tailwind, percent: '30%' },
-    { directionLeft: false, icon: antd, percent: '80%' },
+    { directionLeft: true, icon: html, percent: '90%' },
+    { directionLeft: true, icon: cssIcon, percent: '80%' },
+    { directionLeft: true, icon: js, percent: '80%' },
+    { directionLeft: true, icon: ts, percent: '65%' },
+    { directionLeft: false, icon: react, percent: '80%' },
+    { directionLeft: false, icon: next_w, percent: '70%' },
+    { directionLeft: false, icon: tailwind, percent: '60%' },
+    { directionLeft: false, icon: antd, percent: '90%' },
 ];
 type Props = {};
 

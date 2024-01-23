@@ -27,19 +27,30 @@ export default function About({}: Props) {
                 <h4 className="text-4xl font-semibold">
                     Here is a <span className="underline decoration-[#fb3131]/50">little</span> background
                 </h4>
-                <p className="text-base leading-7">
-                    누구나 이해가 쉽고 잘 읽히는 코드의 작성을 추구하는 프론트엔드 개발자 이은지입니다.
-                    <br /> 조금 더 저를 소개하자면 세가지를 두려워하지 않고 즐기는 개발자로 말씀드리고 싶습니다.
-                    <br />
-                    <span className="text-lg font-semibold underline decoration-[#fb3131]/50">
-                        &quot;새로운 기술 + 새로운 도전 + 모르는 것을 창피해하지 않고 알아내는 것&quot;
-                    </span>
-                    <br />
-                    프로젝트 경험으로는 약 2년의 기간 동안 서비스 어드민을 처음부터 구축한 경험이 있으며, 쇼핑몰, 이벤트
-                    플렛폼 등 다양한 프로젝트 진행 경험이 있습니다.
-                    <br />
-                    최근에는 웹 환경에서 3D 환경을 구축하는 것에 흥미가 생겨 Babylon.js를 공부하고 있습니다.
-                </p>
+                <div className="md:text-xl leading-7 text-base flex flex-col gap-3">
+                    <p>
+                        I am Eunji Lee, a front-end developer who pursues writing code that is easy for anyone to
+                        understand and read.
+                    </p>
+                    <p>
+                        If I were to introduce myself a little more, I would say that I am a developer who enjoys three
+                        things without being afraid.
+                    </p>
+
+                    <p className="md:text-3xl font-semibold underline decoration-[#fb3131]/50 text-xl">
+                        &quot; New skills + new challenges + finding out without being embarrassed by what you don’t
+                        know &quot;
+                    </p>
+                    <p>
+                        As for project experience, I have experience building a service administrator from scratch for
+                        about 3 years, and I have experience working in shopping malls and events. I have experience
+                        working on various projects including platforms.
+                    </p>
+                    <p>
+                        Recently, I have become interested in building 3D environments in a web environment, so I am
+                        studying Babylon.js.
+                    </p>
+                </div>
             </div>
         </motion.div>
     );

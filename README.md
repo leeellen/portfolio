@@ -5,7 +5,7 @@
   <img src="https://i.giphy.com/media/8WJw9kAG3wonu/giphy.webp" onerror="this.onerror=null;this.src='https://i.giphy.com/8WJw9kAG3wonu.gif';" alt="">
 </p>
 
-<h3 align="center">👋 Hi, there i'm ellen the frontend developer </h3>
+<h3 align="center">👋 Hi, there i'm ellen the Software developer </h3>
 
 <!--  -->
 <p align="center">

@@ -49,15 +49,15 @@ export default function Home() {
                 <ContactMe />
             </section>
 
-            <Link href="#hero">
-                <footer className="sticky bottom-5 w-full cursor-pointer">
-                    <div className="flex justify-center items-center">
-                        <div className="w-11 h-11 bg-[#fb3131] rounded-full filter grayscale hover:grayscale-0 cursor-pointer flex justify-center items-center">
-                            <Image src={hero} className="h-10 w-10 " alt="go to top button" />
-                        </div>
+            <footer className="sticky bottom-5 w-full ">
+                <div className="flex justify-center items-center">
+                    <div className="w-11 h-11 bg-[#fb3131] rounded-full filter grayscale hover:grayscale-0 cursor-pointer flex justify-center items-center">
+                        <Link href="#hero">
+                            <Image src={hero} className="h-10 w-10 " alt="go to top button cursor-pointer" />
+                        </Link>
                     </div>
-                </footer>
-            </Link>
+                </div>
+            </footer>
         </div>
     );
 }
