@@ -49,7 +49,7 @@ const projectList = [
         title: 'Nlize',
         stack: '#HTML #CSS #JavaScript',
 
-        desc: 'NIntroduction to Nlize This is a website construction project in which I was responsible for the entire development of the main website, and was implemented using only HTML, CSS, and JavaScript.',
+        desc: 'Introduction to Nlize This is a website construction project in which I was responsible for the entire development of the main website, and was implemented using only HTML, CSS, and JavaScript.',
     },
     {
         link: 'http://dokdomuseum.nahf.or.kr/',
