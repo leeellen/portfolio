@@ -2,12 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .heroButtons {
-        @apply px-6  py-2 border border-[#242424] rounded-full uppercase text-xs  tracking-widest text-gray-500 transition-all hover:border-[#fb3131]/40 hover:text-[#fb3131]/40;
+@layer base {
+    html {
+        scroll-behavior: smooth;
     }
 
-    .contactInput {
-        @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#fb3131]/40 focus:text-[#fb3131]/40 hover:border-[#fb3131]/40;
+    /* Visible keyboard focus for all interactive elements */
+    a:focus-visible,
+    button:focus-visible {
+        outline: 2px solid #bd4b34;
+        outline-offset: 2px;
+        border-radius: 4px;
+    }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }

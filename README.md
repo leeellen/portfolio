@@ -1,84 +1,44 @@
-<img src="https://capsule-render.vercel.app/api?type=wave&color=EAC7C7&height=200&section=header&text=E%20L%20L%20E%20N&fontSize=90&fontColor=181823&animation=twinkling" />
+# Ellen Lee — Portfolio
 
-<!--  -->
-<p align="center">
-  <img src="https://i.giphy.com/media/8WJw9kAG3wonu/giphy.webp" onerror="this.onerror=null;this.src='https://i.giphy.com/8WJw9kAG3wonu.gif';" alt="">
-</p>
+프론트엔드 개발자 이은지(Ellen Lee)의 개인 포트폴리오 사이트입니다.
+React · Next.js · TypeScript 기반 프로덕션 웹 경험과 주요 프로젝트를 한/영 단일 페이지로 소개합니다.
 
-<h3 align="center">👋 Hi, there i'm ellen the Software developer </h3>
+🔗 **Live:** https://leeellen.vercel.app
 
-<!--  -->
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/54742523/220513654-797098a2-d11a-4ea1-b27d-e49ccbfa5632.png" />
-</p>
+## Stack
 
-<p align="center">
-  <img src="https://i.giphy.com/media/l1AsRItQQJJJqshR6/giphy.webp" />
-</p>
+- **Framework:** Next.js 13 (Pages Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **i18n:** Next.js 내장 i18n 라우팅 (`ko` / `en`)
+- **Deploy:** Vercel
 
-<h3 align="center">🤔 So... What can i do</h3>
+## Structure
 
-<p align="center">
-  <a href="https://reactjs.org" target="_blank"><img src="https://img.shields.io/badge/R e a c t-EAC7C7?style=for-the-badge&logo=React&logoColor=FFF"/></a>
-  <a href="https://nextjs.org" target="_blank"><img src="https://img.shields.io/badge/N e x t . j s-A0C3D2?style=for-the-badge&logo=Next.js&logoColor=FFF"/></a>
-    <br/>
-  <a href="https://developer.mozilla.org/ko/docs/Web/JavaScript" target="_blank"><img src="https://img.shields.io/badge/J a v a s c r i p t-EAC7C7?style=for-the-badge&logo=JavaScript&logoColor=FFF"/></a>
-  <a href="https://www.typescriptlang.org/" target="_blank"><img src="https://img.shields.io/badge/T y p e s c r i p t-A0C3D2?style=for-the-badge&logo=TypeScript&logoColor=FFF"/></a>
-</p>
+```
+src/
+├─ pages/
+│  ├─ index.tsx       # 페이지 (프레젠테이션)
+│  ├─ _app.tsx
+│  └─ _document.tsx   # locale별 <html lang> 설정
+├─ content/
+│  └─ portfolio.ts    # 모든 콘텐츠 데이터 + 타입 (한/영)
+└─ styles/
+   └─ globals.css
+```
 
-<!--  -->
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/54742523/220513654-797098a2-d11a-4ea1-b27d-e49ccbfa5632.png" />
-</p>
+콘텐츠는 `src/content/portfolio.ts` 한 곳에 모여 있습니다. 이력·프로젝트 갱신 시 이 파일만 수정하면 됩니다.
 
-<p align="center">
-<img src="https://i.giphy.com/media/12uXi1GXBibALC/giphy.webp" onerror="this.onerror=null;this.src='https://i.giphy.com/12uXi1GXBibALC.gif';" alt="">
-</p>
+## Development
 
-<h3 align="center">🤤 What I'm interested in recently...</h3>
-<p align="center">
-  <a href="https://www.babylonjs.com" target="_blank"><img src="https://img.shields.io/badge/B a b y l o n . j s-EAC7C7?style=for-the-badge&logo=Bookalope&logoColor=FFF"/></a>
-  <a href="https://threejs.org" target="_blank"><img src="https://img.shields.io/badge/T h r e e . j s-A0C3D2?style=for-the-badge&logo=Three.js&logoColor=FFF"/></a>
-</p>
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # 프로덕션 빌드
+npm run start    # 빌드 결과 실행
+npm run lint
+```
 
-<!--  -->
-<p align="center">
-<img src="https://user-images.githubusercontent.com/54742523/220513654-797098a2-d11a-4ea1-b27d-e49ccbfa5632.png" />
-</p>
+## License
 
-<p align="center">
-<img style="display: block;-webkit-user-select: none;margin: auto;background-color: hsl(0, 0%, 90%);" src="https://media1.giphy.com/media/lKXEBR8m1jWso/giphy.gif?cid=ecf05e47qdeqopvq3nymyg27ica4ftd3v4itjud1hpf6tuyb&amp;rid=giphy.gif&amp;ct=g">
-</p>
-
-<h3 align="center">🫣 Is this my report card?</h3>
-<p align="center">
-  <picture>
-    <source 
-      srcset="https://github-readme-stats.vercel.app/api?username=leeellen&show_icons=true&theme=transparent&bg_color=181823&border_color=EAC7C7&title_color=EAC7C7&icon_color=EAC7C7&text_color=A0C3D2"
-      media="(prefers-color-scheme: dark)"
-    />
-    <source
-      srcset="https://github-readme-stats.vercel.app/api?username=leeellen&show_icons=true&theme=transparent&bg_color=181823&border_color=EAC7C7&title_color=EAC7C7&icon_color=EAC7C7&text_color=A0C3D2"
-      media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)"
-    />
-    <img src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true" />
-  </picture>
-</p>
-
-<!--  -->
-<p align="center">
-<img src="https://user-images.githubusercontent.com/54742523/220513654-797098a2-d11a-4ea1-b27d-e49ccbfa5632.png" />
-</p>
-
-<p align="center">
-<img src="https://i.giphy.com/media/ZOln4JxCoZay4/giphy.webp" onerror="this.onerror=null;this.src='https://i.giphy.com/ZOln4JxCoZay4.gif';" alt="">
-</p>
-
-<h3 align="center">🫵 Hey, you don't be a stranger</h3>
-<p align="center">
-  <a href="https://rick-ford.tistory.com" target="_blank"><img src="https://img.shields.io/badge/B l o g-EAC7C7?style=for-the-badge&logo=BookStack&logoColor=FFF"/></a> 
-  <a href="mailto:lee.ellen0814@gmail.com" target="_blank"><img src="https://img.shields.io/badge/C o n t a c t-A0C3D2?style=for-the-badge&logo=Minutemailer&logoColor=FFF"/></a>
-</p>
-
-<!--  -->
-<img src="https://capsule-render.vercel.app/api?type=wave&color=EAC7C7&height=200&section=footer" />
+Personal portfolio. © Eunji Lee.
