@@ -46,6 +46,8 @@ export type Content = {
         secondaryCta: string;
     };
     stats: { value: string; label: string }[];
+    highlightsTitle: string;
+    highlights: { metric: string; text: string }[];
     about: {
         eyebrow: string;
         title: string;
@@ -56,7 +58,7 @@ export type Content = {
     skills: { eyebrow: string; title: string; groups: SkillGroup[] };
     experience: { eyebrow: string; title: string; items: ExperienceItem[] };
     projects: { eyebrow: string; title: string; body: string; visit: string; list: Project[] };
-    contact: { eyebrow: string; title: string; body: string; email: string; github: string; blog: string };
+    contact: { eyebrow: string; title: string; body: string; email: string; github: string; blog: string; resume: string };
     footer: string;
 };
 
@@ -84,6 +86,12 @@ export const content: Record<Locale, Content> = {
         stats: [
             { value: '6년+', label: '프론트엔드 개발 경력' },
             { value: '10+', label: '런칭한 프로덕션 웹' },
+        ],
+        highlightsTitle: '대표 성과',
+        highlights: [
+            { metric: '10초 → 0.1초', text: '대량 데이터 조회 응답 지연 해결 — Firebase를 자체 API로 교체' },
+            { metric: 'react-hook-form 리팩토링', text: '대상자 입력 로직 재설계로 불필요한 리렌더·입력 지연 대폭 감소' },
+            { metric: '기획부터 구현까지', text: 'CRF 빌더·DVS 개발 도구를 데이터 구조 설계 단계부터 직접 구축' },
         ],
         about: {
             eyebrow: '소개',
@@ -213,6 +221,7 @@ export const content: Record<Locale, Content> = {
             email: '이메일 보내기',
             github: 'GitHub',
             blog: '기술 블로그',
+            resume: '이력서 PDF',
         },
         footer: 'Eunji Lee · Frontend Developer',
     },
@@ -234,6 +243,12 @@ export const content: Record<Locale, Content> = {
         stats: [
             { value: '6+ yrs', label: 'Frontend experience' },
             { value: '10+', label: 'Production sites shipped' },
+        ],
+        highlightsTitle: 'Selected impact',
+        highlights: [
+            { metric: '10s → 0.1s', text: 'Cut large-dataset query latency by replacing Firebase with a custom API' },
+            { metric: 'react-hook-form refactor', text: 'Redesigned subject-entry logic — slashed re-renders and input latency' },
+            { metric: 'design → ship', text: 'Built the CRF builder & DVS dev tool from the data-structure stage up' },
         ],
         about: {
             eyebrow: 'About',
@@ -363,6 +378,7 @@ export const content: Record<Locale, Content> = {
             email: 'Email me',
             github: 'GitHub',
             blog: 'Tech blog',
+            resume: 'Resume (PDF)',
         },
         footer: 'Eunji Lee · Frontend Developer',
     },

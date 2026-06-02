@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 
 import { content, EMAIL, GITHUB, BLOG, SITE_URL, type Locale } from '@/content/portfolio';
 
+const RESUME = '/ellen-lee-resume.pdf';
+
 export default function Home() {
     const router = useRouter();
     const locale: Locale = router.locale === 'en' ? 'en' : 'ko';
@@ -55,6 +57,14 @@ export default function Home() {
                             >
                                 {alternateLocale.toUpperCase()}
                             </Link>
+                            <a
+                                href={RESUME}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="rounded-full bg-[#1b1b1a] px-4 py-1.5 text-xs font-semibold text-white transition hover:bg-[#bd4b34]"
+                            >
+                                {t.contact.resume}
+                            </a>
                         </div>
                     </nav>
                 </header>
@@ -100,6 +110,19 @@ export default function Home() {
                                 >
                                     <span className="text-4xl font-semibold tracking-tight text-[#bd4b34]">{s.value}</span>
                                     <span className="text-right text-sm leading-5 text-black/60">{s.label}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Highlights */}
+                    <section aria-label={t.highlightsTitle} className="border-t border-black/[0.07] py-12">
+                        <p className="text-sm font-semibold uppercase tracking-wider text-[#bd4b34]">{t.highlightsTitle}</p>
+                        <div className="mt-6 grid gap-4 md:grid-cols-3">
+                            {t.highlights.map((h) => (
+                                <div key={h.metric} className="rounded-2xl bg-[#1b1b1a] p-6 text-white">
+                                    <p className="text-xl font-semibold tracking-tight text-[#e7b778]">{h.metric}</p>
+                                    <p className="mt-3 text-sm leading-6 text-white/70">{h.text}</p>
                                 </div>
                             ))}
                         </div>
@@ -243,12 +266,20 @@ export default function Home() {
                                 {t.contact.title}
                             </h2>
                             <p className="mt-4 max-w-xl leading-7 text-white/55">{t.contact.body}</p>
-                            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                                 <a
                                     href={`mailto:${EMAIL}`}
                                     className="rounded-full bg-[#bd4b34] px-7 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#a23e2a]"
                                 >
                                     {t.contact.email}
+                                </a>
+                                <a
+                                    href={RESUME}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-full border border-white/20 px-7 py-3 text-center text-sm font-semibold transition hover:border-white/60"
+                                >
+                                    {t.contact.resume}
                                 </a>
                                 <a
                                     href={GITHUB}
