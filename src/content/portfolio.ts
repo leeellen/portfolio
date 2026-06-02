@@ -90,7 +90,7 @@ export const content: Record<Locale, Content> = {
         highlightsTitle: '대표 성과',
         highlights: [
             { metric: '10초 → 0.1초', text: '대량 데이터 조회 응답 지연 해결 — Firebase를 자체 API로 교체' },
-            { metric: 'react-hook-form 리팩토링', text: '대상자 입력 로직 재설계로 불필요한 리렌더·입력 지연 대폭 감소' },
+            { metric: '최초 렌더 ~5초 단축', text: '대상자 입력 시 전체 필드 리렌더 문제를 react-hook-form 렌더링 최적화로 해결 — 입력 지연 해소' },
             { metric: '기획부터 구현까지', text: 'CRF 빌더·DVS 개발 도구를 데이터 구조 설계 단계부터 직접 구축' },
         ],
         about: {
@@ -137,7 +137,7 @@ export const content: Record<Locale, Content> = {
                     company: 'MDB Co., Ltd.',
                     summary: '임상시험 데이터를 수집·관리하는 eCRF 플랫폼에서, 매일 수많은 데이터가 오가는 운영 화면의 성능·구조·품질을 책임집니다. 기능을 더하기 전에 "왜 느린가, 어떻게 더 견고하게 만들까"를 먼저 묻습니다.',
                     points: [
-                        { title: '대상자 입력 로직 성능 리팩토링', detail: '리렌더가 잦던 입력 로직을 react-hook-form으로 재설계. 기획·시나리오 테스트를 직접 주도해 불필요한 리렌더와 입력 응답 지연을 대폭 감소시켰습니다.' },
+                        { title: '대상자 입력 로직 성능 리팩토링', detail: '입력할 때마다 모든 필드가 리렌더돼 입력 지연이 발생하던 문제를, react-hook-form 기반 렌더링 최적화로 해결. 입력 지연을 해소하고 최초 렌더 시간을 약 5초 단축했습니다. 기획부터 시나리오 테스트까지 직접 주도했습니다.' },
                         { title: 'CRF 빌더 설계·구현 주도', detail: '신규 빌더의 데이터 구조를 기획 단계에서 설계해 채택. 에디터 로드·서브밋·엔티티 추가 코어 플로우를 담당하고 비즈니스 로직 테스트로 보강했습니다.' },
                         { title: 'DVS 개발 도구 신규 구축', detail: '검증·파생값 로직을 만들고 즉시 확인하는 개발 도구를 0부터 구현. preview·save 트리거 연동, 방문 그룹·동적 테이블, 저장 응답 유실 방지까지.' },
                         { title: 'OCR·카메라 입력 연동', detail: '카메라 기반 OCR 입력 구현. WebSocket 실시간 연동 안정화, 디바이스 표시, 카메라 권한 처리, 캡처 파이프라인 Next 라우트 통합.' },
@@ -247,7 +247,7 @@ export const content: Record<Locale, Content> = {
         highlightsTitle: 'Selected impact',
         highlights: [
             { metric: '10s → 0.1s', text: 'Cut large-dataset query latency by replacing Firebase with a custom API' },
-            { metric: 'react-hook-form refactor', text: 'Redesigned subject-entry logic — slashed re-renders and input latency' },
+            { metric: '~5s faster load', text: 'Fixed all-field re-render on subject entry via react-hook-form — input lag gone' },
             { metric: 'design → ship', text: 'Built the CRF builder & DVS dev tool from the data-structure stage up' },
         ],
         about: {
@@ -294,7 +294,7 @@ export const content: Record<Locale, Content> = {
                     company: 'MDB Co., Ltd.',
                     summary: 'On an eCRF platform that captures and manages clinical-trial data, I own the performance, structure, and quality of the operational screens used every day. Before adding a feature, I ask "why is this slow, and how do we make it sturdier?"',
                     points: [
-                        { title: 'Subject-entry performance refactor', detail: 'Redesigned the re-render-heavy data-entry logic around react-hook-form. Drove it end to end — planning through scenario testing — cutting unnecessary re-renders and input latency dramatically.' },
+                        { title: 'Subject-entry performance refactor', detail: 'Every keystroke re-rendered all fields, causing input lag. Reworked the rendering around react-hook-form — eliminated the input lag and cut initial render time by ~5s. Drove it end to end, from planning through scenario testing.' },
                         { title: 'Led the CRF builder design & build', detail: 'Proposed the new builder\'s data structure at the planning stage and got it adopted. Owned core flows — editor load, submit, entity-add — backed by business-logic tests.' },
                         { title: 'Built the DVS dev tool from scratch', detail: 'A developer tool to author validation/derived-value logic and preview it instantly: preview/save trigger APIs, visit groups, dynamic tables, and guards against losing save responses.' },
                         { title: 'OCR & camera input', detail: 'Built camera-based OCR input — stabilized the WebSocket link, device display, camera-permission handling, and consolidated the capture pipeline into Next routes.' },
