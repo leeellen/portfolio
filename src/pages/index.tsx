@@ -214,12 +214,14 @@ export default function Home() {
                                         href={project.link}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="group relative flex items-center justify-center overflow-hidden bg-[#e8e2d6] p-8"
+                                        className="group relative flex min-h-[260px] items-center justify-center overflow-hidden bg-[#e8e2d6] p-8"
                                         aria-label={`${project.title} — ${t.projects.visit}`}
                                     >
                                         <Image
                                             src={project.image}
                                             alt={`${project.title} preview`}
+                                            placeholder="blur"
+                                            sizes="(min-width: 768px) 45vw, 90vw"
                                             className="max-h-72 w-full object-contain transition duration-300 group-hover:scale-[1.03]"
                                         />
                                     </Link>
