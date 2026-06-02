@@ -20,6 +20,12 @@ export default function Home() {
             <Head>
                 <title>{t.meta.title}</title>
                 <meta name="description" content={t.meta.description} />
+                <link rel="preconnect" href="https://fonts.googleapis.com" />
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+                <link
+                    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
+                    rel="stylesheet"
+                />
                 <link rel="canonical" href={canonical} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={canonical} />
@@ -38,7 +44,7 @@ export default function Home() {
                 {/* Header */}
                 <header className="sticky top-0 z-50 border-b border-black/[0.07] bg-[#f7f4ee]/85 backdrop-blur-md">
                     <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-                        <Link href="#top" className="text-base font-semibold tracking-tight">
+                        <Link href="#top" className="font-serif text-xl font-medium tracking-tight">
                             Ellen Lee<span className="text-[#bd4b34]">.</span>
                         </Link>
                         <div className="hidden items-center gap-8 text-sm text-black/60 md:flex">
@@ -73,20 +79,20 @@ export default function Home() {
                     {/* Hero */}
                     <section className="grid items-center gap-12 py-20 md:grid-cols-[1.15fr_0.85fr] md:py-28">
                         <div>
-                            <p className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-[#365b6d]">
+                            <p className="anim-rise inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/60 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-[#365b6d]">
                                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-[#5b8c5a]" />
                                 {t.hero.availability}
                             </p>
-                            <h1 className="mt-7 text-[2.7rem] font-semibold leading-[1.05] tracking-tight md:text-6xl">
+                            <h1 className="anim-rise mt-7 text-[2.7rem] font-semibold leading-[1.05] tracking-tight md:text-6xl" style={{ animationDelay: '0.08s' }}>
                                 {t.hero.title.map((line, i) => (
                                     <span key={i} className="block">
                                         {line}
                                     </span>
                                 ))}
                             </h1>
-                            <p className="mt-7 max-w-xl text-lg leading-8 text-black/70">{t.hero.tagline}</p>
-                            <p className="mt-4 max-w-xl leading-7 text-black/65">{t.hero.intro}</p>
-                            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                            <p className="anim-rise mt-7 max-w-xl text-lg leading-8 text-black/70" style={{ animationDelay: '0.16s' }}>{t.hero.tagline}</p>
+                            <p className="anim-rise mt-4 max-w-xl leading-7 text-black/65" style={{ animationDelay: '0.24s' }}>{t.hero.intro}</p>
+                            <div className="anim-rise mt-9 flex flex-col gap-3 sm:flex-row" style={{ animationDelay: '0.32s' }}>
                                 <Link
                                     href="#projects"
                                     className="rounded-full bg-[#bd4b34] px-7 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#a23e2a]"
@@ -102,13 +108,13 @@ export default function Home() {
                             </div>
                         </div>
 
-                        <div className="grid gap-4">
+                        <div className="anim-rise grid gap-4" style={{ animationDelay: '0.4s' }}>
                             {t.stats.map((s) => (
                                 <div
                                     key={s.label}
                                     className="flex items-baseline justify-between rounded-2xl border border-black/10 bg-white px-6 py-5 shadow-[0_1px_0_rgba(0,0,0,0.02)]"
                                 >
-                                    <span className="text-4xl font-semibold tracking-tight text-[#bd4b34]">{s.value}</span>
+                                    <span className="font-serif text-5xl font-medium tracking-tight text-[#bd4b34]">{s.value}</span>
                                     <span className="text-right text-sm leading-5 text-black/60">{s.label}</span>
                                 </div>
                             ))}
@@ -117,11 +123,22 @@ export default function Home() {
 
                     {/* Highlights */}
                     <section aria-label={t.highlightsTitle} className="border-t border-black/[0.07] py-12">
-                        <p className="text-sm font-semibold uppercase tracking-wider text-[#bd4b34]">{t.highlightsTitle}</p>
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#bd4b34]">{t.highlightsTitle}</p>
                         <div className="mt-6 grid gap-4 md:grid-cols-3">
                             {t.highlights.map((h) => (
-                                <div key={h.metric} className="rounded-2xl bg-[#1b1b1a] p-6 text-white">
-                                    <p className="text-xl font-semibold tracking-tight text-[#e7b778]">{h.metric}</p>
+                                <div
+                                    key={h.metric}
+                                    className="group relative overflow-hidden rounded-2xl bg-[#1b1b1a] p-7 text-white"
+                                >
+                                    <span
+                                        aria-hidden
+                                        className="pointer-events-none absolute -right-4 -top-6 font-serif text-[5rem] leading-none text-white/[0.06]"
+                                    >
+                                        ★
+                                    </span>
+                                    <p className="font-serif text-2xl font-medium leading-tight tracking-tight text-[#e7b778]">
+                                        {h.metric}
+                                    </p>
                                     <p className="mt-3 text-sm leading-6 text-white/70">{h.text}</p>
                                 </div>
                             ))}
@@ -130,7 +147,7 @@ export default function Home() {
 
                     {/* About */}
                     <section id="about" className="scroll-mt-24 border-t border-black/[0.07] py-20 md:py-24">
-                        <SectionHeader eyebrow={t.about.eyebrow} title={t.about.title} />
+                        <SectionHeader num="01" eyebrow={t.about.eyebrow} title={t.about.title} />
                         <p className="mt-6 max-w-3xl text-lg leading-8 text-black/65">{t.about.body}</p>
 
                         <p className="mt-14 text-sm font-semibold uppercase tracking-wider text-black/50">
@@ -148,7 +165,7 @@ export default function Home() {
 
                     {/* Skills */}
                     <section id="skills" className="scroll-mt-24 border-t border-black/[0.07] py-20 md:py-24">
-                        <SectionHeader eyebrow={t.skills.eyebrow} title={t.skills.title} />
+                        <SectionHeader num="02" eyebrow={t.skills.eyebrow} title={t.skills.title} />
                         <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 md:grid-cols-2">
                             {t.skills.groups.map((g) => (
                                 <div key={g.label} className="bg-white p-6">
@@ -170,7 +187,7 @@ export default function Home() {
 
                     {/* Experience */}
                     <section id="experience" className="scroll-mt-24 border-t border-black/[0.07] py-20 md:py-24">
-                        <SectionHeader eyebrow={t.experience.eyebrow} title={t.experience.title} />
+                        <SectionHeader num="03" eyebrow={t.experience.eyebrow} title={t.experience.title} />
                         <div className="mt-10 space-y-4">
                             {t.experience.items.map((item) => (
                                 <article
@@ -178,7 +195,7 @@ export default function Home() {
                                     className="grid gap-5 rounded-2xl border border-black/10 bg-white p-6 md:grid-cols-[200px_1fr] md:p-8"
                                 >
                                     <div>
-                                        <p className="text-sm font-semibold text-[#bd4b34]">{item.period}</p>
+                                        <p className="font-serif text-base italic text-[#bd4b34]">{item.period}</p>
                                         <h3 className="mt-2 text-xl font-semibold">{item.role}</h3>
                                         <p className="mt-1 text-black/60">{item.company}</p>
                                     </div>
@@ -200,7 +217,7 @@ export default function Home() {
 
                     {/* Projects */}
                     <section id="projects" className="scroll-mt-24 border-t border-black/[0.07] py-20 md:py-24">
-                        <SectionHeader eyebrow={t.projects.eyebrow} title={t.projects.title} />
+                        <SectionHeader num="04" eyebrow={t.projects.eyebrow} title={t.projects.title} />
                         <p className="mt-6 max-w-2xl leading-7 text-black/65">{t.projects.body}</p>
                         <div className="mt-10 grid gap-6">
                             {t.projects.list.map((project, i) => (
@@ -326,11 +343,15 @@ export default function Home() {
     );
 }
 
-function SectionHeader({ eyebrow, title }: { eyebrow: string; title: string }) {
+function SectionHeader({ num, eyebrow, title }: { num: string; eyebrow: string; title: string }) {
     return (
         <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[#bd4b34]">{eyebrow}</p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
+            <div className="flex items-baseline gap-3">
+                <span className="font-serif text-2xl font-medium italic text-[#bd4b34]/80">{num}</span>
+                <span className="h-px flex-1 translate-y-[-0.4em] bg-black/15" />
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#bd4b34]">{eyebrow}</p>
+            </div>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
         </div>
     );
 }

@@ -18,6 +18,7 @@ module.exports = {
                     'Malgun Gothic',
                     'sans-serif',
                 ],
+                serif: ['Fraunces', 'ui-serif', 'Georgia', 'serif'],
             },
         },
     },
