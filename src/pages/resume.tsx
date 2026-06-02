@@ -7,6 +7,20 @@ const t = content.ko;
 const EDUCATION = { school: '동남보건대학교', major: '경영학과 학사', period: '2014.03 — 2017.02' };
 const CERT = { name: '컴퓨터활용능력 1급', date: '2017.02' };
 
+const HASHTAGS = ['#JS #TS', '#React #Next.js', '#TanStack #Jotai #react-hook-form', '#TailwindCSS #Emotion #Antd'];
+
+function Stars({ filled }: { filled: number }) {
+    return (
+        <span className="stars" aria-hidden>
+            {Array.from({ length: 5 }).map((_, i) => (
+                <span key={i} className={i < filled ? 'on' : 'off'}>
+                    ●
+                </span>
+            ))}
+        </span>
+    );
+}
+
 export default function Resume() {
     return (
         <>
@@ -15,114 +29,268 @@ export default function Resume() {
                 <meta name="robots" content="noindex" />
             </Head>
 
-            <main className="resume mx-auto max-w-[820px] bg-white px-10 py-10 text-[#1b1b1a]">
-                {/* Header */}
-                <header className="border-b border-black/15 pb-5">
-                    <h1 className="text-3xl font-bold tracking-tight">
-                        이은지 <span className="text-lg font-medium text-black/55">Ellen Lee</span>
-                    </h1>
-                    <p className="mt-1 font-semibold text-[#bd4b34]">프론트엔드 개발자</p>
-                    <p className="mt-2 text-sm leading-6 text-black/60">
-                        누구나 이해하기 쉽고 잘 읽히는 코드를 지향합니다. 2020년부터 React·Next.js·TypeScript로 프로덕션 웹을
-                        만들어 왔고, 현재는 대규모 임상연구 데이터 플랫폼의 운영 화면 성능·구조·품질을 책임집니다.
-                    </p>
-                    <p className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-black/70">
-                        <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                        <a href={GITHUB}>github.com/leeellen</a>
-                        <a href={BLOG}>rick-ford.tistory.com</a>
-                        <a href={SITE_URL}>leeellen.vercel.app</a>
-                    </p>
-                </header>
+            <div className="cv">
+                {/* full-height gold strip — repeats on every printed page */}
+                <div className="cv-rail" aria-hidden />
 
-                {/* Highlights */}
-                <Section title="대표 성과">
-                    <ul className="grid gap-2">
-                        {t.highlights.map((h) => (
-                            <li key={h.metric} className="text-sm leading-6">
-                                <span className="font-semibold text-[#bd4b34]">{h.metric}</span>
-                                <span className="text-black/70"> — {h.text}</span>
-                            </li>
+                {/* sidebar content — appears once (page 1) */}
+                <aside className="cv-side">
+                    <section>
+                        <h2 className="side-h">PERSONAL</h2>
+                        <p className="side-k">Name</p>
+                        <p className="side-v">이은지 · Ellen Lee</p>
+                        <p className="side-k">Email</p>
+                        <p className="side-v">{EMAIL}</p>
+                    </section>
+
+                    <section>
+                        <h2 className="side-h">LANGUAGES</h2>
+                        <div className="lang">
+                            <span>Korean</span>
+                            <Stars filled={5} />
+                        </div>
+                        <div className="lang">
+                            <span>English</span>
+                            <Stars filled={2} />
+                        </div>
+                    </section>
+
+                    <section>
+                        <h2 className="side-h">SKILLS</h2>
+                        {t.skills.groups.map((g) => (
+                            <div key={g.label} className="skill-grp">
+                                <p className="skill-label">{g.label}</p>
+                                <p className="skill-items">{g.items.join(', ')}</p>
+                            </div>
                         ))}
-                    </ul>
-                </Section>
+                    </section>
 
-                {/* Experience */}
-                <Section title="경력">
-                    <div className="space-y-5">
+                    <section>
+                        <h2 className="side-h">LINKS</h2>
+                        <p className="side-v">{GITHUB.replace('https://', '')}</p>
+                        <p className="side-v">{BLOG.replace('https://', '')}</p>
+                        <p className="side-v">{SITE_URL.replace('https://', '')}</p>
+                    </section>
+                </aside>
+
+                {/* main column */}
+                <main className="cv-main">
+                    <header className="cv-head">
+                        <h1>EUNJI LEE</h1>
+                        <p className="lead">프론트엔드 개발자 이은지입니다.</p>
+                        <p className="lead">누구나 이해가 쉽고 잘 읽히는 코드의 작성을 위해 노력합니다.</p>
+                        <div className="tags">
+                            {HASHTAGS.map((h) => (
+                                <p key={h}>{h}</p>
+                            ))}
+                        </div>
+                    </header>
+
+                    <section className="cv-sec">
+                        <h2 className="sec-h">WORK EXPERIENCE</h2>
                         {t.experience.items.map((item) => (
-                            <article key={item.company} className="break-inside-avoid">
-                                <div className="flex items-baseline justify-between">
-                                    <h3 className="font-bold">
-                                        {item.company} <span className="font-medium text-black/55">· {item.role}</span>
-                                    </h3>
-                                    <span className="text-sm text-black/55">{item.period}</span>
+                            <article key={item.company} className="exp">
+                                <div className="exp-date">{item.period}</div>
+                                <div className="exp-body">
+                                    <h3 className="exp-role">{item.role}</h3>
+                                    <p className="exp-co">{item.company}</p>
+                                    <p className="exp-sum">{item.summary}</p>
+                                    <ul className="exp-points">
+                                        {item.points.map((p) => (
+                                            <li key={p.title}>
+                                                <span className="pt-title">{p.title}</span> — {p.detail}
+                                            </li>
+                                        ))}
+                                    </ul>
                                 </div>
-                                <p className="mt-1 text-sm leading-6 text-black/65">{item.summary}</p>
-                                <ul className="mt-2 space-y-1.5">
-                                    {item.points.map((p) => (
-                                        <li key={p.title} className="text-sm leading-6">
-                                            <span className="font-semibold">{p.title}</span>
-                                            <span className="text-black/65"> — {p.detail}</span>
-                                        </li>
-                                    ))}
-                                </ul>
                             </article>
                         ))}
-                    </div>
-                </Section>
+                    </section>
 
-                {/* Skills */}
-                <Section title="기술">
-                    <div className="grid gap-1.5 text-sm leading-6">
-                        {t.skills.groups.map((g) => (
-                            <p key={g.label}>
-                                <span className="font-semibold">{g.label}</span>
-                                <span className="text-black/70"> · {g.items.join(', ')}</span>
-                            </p>
-                        ))}
-                    </div>
-                </Section>
-
-                {/* Education */}
-                <Section title="학력 · 자격">
-                    <div className="flex items-baseline justify-between text-sm">
-                        <span>
-                            <span className="font-semibold">{EDUCATION.school}</span>
-                            <span className="text-black/65"> · {EDUCATION.major}</span>
-                        </span>
-                        <span className="text-black/55">{EDUCATION.period}</span>
-                    </div>
-                    <div className="mt-1 flex items-baseline justify-between text-sm">
-                        <span className="font-semibold">{CERT.name}</span>
-                        <span className="text-black/55">{CERT.date}</span>
-                    </div>
-                </Section>
-            </main>
+                    <section className="cv-sec">
+                        <h2 className="sec-h">EDUCATION &amp; QUALIFICATIONS</h2>
+                        <article className="exp">
+                            <div className="exp-date">{EDUCATION.period}</div>
+                            <div className="exp-body">
+                                <h3 className="exp-role">{EDUCATION.school}</h3>
+                                <p className="exp-co">{EDUCATION.major}</p>
+                            </div>
+                        </article>
+                        <article className="exp">
+                            <div className="exp-date">{CERT.date}</div>
+                            <div className="exp-body">
+                                <h3 className="exp-role">{CERT.name}</h3>
+                            </div>
+                        </article>
+                    </section>
+                </main>
+            </div>
 
             <style jsx global>{`
                 @page {
                     size: A4;
-                    margin: 14mm;
+                    margin: 0;
                 }
-                @media print {
-                    body {
-                        background: #fff;
-                    }
-                    .resume {
-                        max-width: none;
-                        padding: 0;
-                    }
+                * {
+                    -webkit-print-color-adjust: exact;
+                    print-color-adjust: exact;
+                }
+                body {
+                    margin: 0;
+                    color: #1f1d1a;
+                    font-size: 11px;
+                    line-height: 1.55;
+                }
+                .cv {
+                    position: relative;
+                }
+                .cv-rail {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 34%;
+                    background: #e7a23a;
+                    z-index: 0;
+                }
+                .cv-side {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 34%;
+                    box-sizing: border-box;
+                    padding: 34px 26px;
+                    color: #2a2410;
+                    z-index: 1;
+                }
+                .cv-side section {
+                    margin-bottom: 22px;
+                }
+                .side-h {
+                    font-size: 12px;
+                    font-weight: 800;
+                    letter-spacing: 0.12em;
+                    margin: 0 0 10px;
+                    border-bottom: 1.5px solid rgba(0, 0, 0, 0.28);
+                    padding-bottom: 5px;
+                }
+                .side-k {
+                    margin: 8px 0 0;
+                    font-size: 9.5px;
+                    font-weight: 700;
+                    opacity: 0.65;
+                }
+                .side-v {
+                    margin: 1px 0 0;
+                    font-size: 10.5px;
+                    word-break: break-all;
+                }
+                .lang {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    margin-top: 6px;
+                    font-size: 10.5px;
+                    font-weight: 600;
+                }
+                .stars .on {
+                    color: #2a2410;
+                }
+                .stars .off {
+                    color: rgba(0, 0, 0, 0.22);
+                }
+                .skill-grp {
+                    margin-top: 8px;
+                }
+                .skill-label {
+                    margin: 0;
+                    font-size: 9.5px;
+                    font-weight: 700;
+                }
+                .skill-items {
+                    margin: 1px 0 0;
+                    font-size: 10px;
+                    opacity: 0.85;
+                }
+                .cv-main {
+                    margin-left: 34%;
+                    box-sizing: border-box;
+                    padding: 34px 32px 34px 30px;
+                    position: relative;
+                    z-index: 1;
+                }
+                .cv-head h1 {
+                    margin: 0;
+                    font-size: 30px;
+                    font-weight: 800;
+                    letter-spacing: 0.01em;
+                }
+                .lead {
+                    margin: 6px 0 0;
+                    font-size: 11.5px;
+                    color: #3a352c;
+                }
+                .tags {
+                    margin-top: 12px;
+                }
+                .tags p {
+                    margin: 2px 0;
+                    font-weight: 700;
+                    font-size: 10.5px;
+                    color: #2a2410;
+                }
+                .cv-sec {
+                    margin-top: 26px;
+                }
+                .sec-h {
+                    font-size: 13px;
+                    font-weight: 800;
+                    letter-spacing: 0.1em;
+                    border-bottom: 2px solid #e7a23a;
+                    padding-bottom: 6px;
+                    margin: 0 0 16px;
+                }
+                .exp {
+                    display: grid;
+                    grid-template-columns: 92px 1fr;
+                    gap: 14px;
+                    margin-bottom: 18px;
+                    break-inside: avoid;
+                }
+                .exp-date {
+                    font-size: 10px;
+                    font-weight: 700;
+                    color: #6b6453;
+                    padding-top: 2px;
+                }
+                .exp-role {
+                    margin: 0;
+                    font-size: 13px;
+                    font-weight: 800;
+                }
+                .exp-co {
+                    margin: 1px 0 0;
+                    font-size: 11px;
+                    font-weight: 700;
+                    color: #c07a1e;
+                }
+                .exp-sum {
+                    margin: 7px 0 0;
+                    font-size: 10.5px;
+                    color: #4a4438;
+                }
+                .exp-points {
+                    margin: 8px 0 0;
+                    padding-left: 15px;
+                }
+                .exp-points li {
+                    margin-bottom: 5px;
+                    font-size: 10.5px;
+                }
+                .pt-title {
+                    font-weight: 700;
                 }
             `}</style>
         </>
-    );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-    return (
-        <section className="mt-6 break-inside-avoid">
-            <h2 className="mb-3 text-xs font-bold uppercase tracking-wider text-[#bd4b34]">{title}</h2>
-            {children}
-        </section>
     );
 }
