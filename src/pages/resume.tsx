@@ -7,20 +7,6 @@ const t = content.ko;
 const EDUCATION = { school: '동남보건대학교', major: '경영학과 학사', period: '2014.03 — 2017.02' };
 const CERT = { name: '컴퓨터활용능력 1급', date: '2017.02' };
 
-const HASHTAGS = ['#JS #TS', '#React #Next.js', '#TanStack #Jotai #react-hook-form', '#TailwindCSS #Emotion #Antd'];
-
-function Stars({ filled }: { filled: number }) {
-    return (
-        <span className="stars" aria-hidden>
-            {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className={i < filled ? 'on' : 'off'}>
-                    ●
-                </span>
-            ))}
-        </span>
-    );
-}
-
 export default function Resume() {
     return (
         <>
@@ -41,18 +27,6 @@ export default function Resume() {
                         <p className="side-v">이은지 · Ellen Lee</p>
                         <p className="side-k">Email</p>
                         <p className="side-v">{EMAIL}</p>
-                    </section>
-
-                    <section>
-                        <h2 className="side-h">LANGUAGES</h2>
-                        <div className="lang">
-                            <span>Korean</span>
-                            <Stars filled={5} />
-                        </div>
-                        <div className="lang">
-                            <span>English</span>
-                            <Stars filled={2} />
-                        </div>
                     </section>
 
                     <section>
@@ -79,11 +53,10 @@ export default function Resume() {
                         <h1>EUNJI LEE</h1>
                         <p className="lead">프론트엔드 개발자 이은지입니다.</p>
                         <p className="lead">누구나 이해가 쉽고 잘 읽히는 코드의 작성을 위해 노력합니다.</p>
-                        <div className="tags">
-                            {HASHTAGS.map((h) => (
-                                <p key={h}>{h}</p>
-                            ))}
-                        </div>
+                        <p className="lead">
+                            2020년부터 React·Next.js·TypeScript로 프로덕션 웹을 만들어 왔고, 현재는 대규모 임상연구 데이터
+                            플랫폼의 운영 화면 성능·구조·품질을 책임집니다.
+                        </p>
                     </header>
 
                     <section className="cv-sec">
@@ -185,20 +158,6 @@ export default function Resume() {
                     font-size: 10.5px;
                     word-break: break-all;
                 }
-                .lang {
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-top: 6px;
-                    font-size: 10.5px;
-                    font-weight: 600;
-                }
-                .stars .on {
-                    color: #2a2410;
-                }
-                .stars .off {
-                    color: rgba(0, 0, 0, 0.22);
-                }
                 .skill-grp {
                     margin-top: 8px;
                 }
@@ -229,15 +188,6 @@ export default function Resume() {
                     margin: 6px 0 0;
                     font-size: 11.5px;
                     color: #3a352c;
-                }
-                .tags {
-                    margin-top: 12px;
-                }
-                .tags p {
-                    margin: 2px 0;
-                    font-weight: 700;
-                    font-size: 10.5px;
-                    color: #2a2410;
                 }
                 .cv-sec {
                     margin-top: 26px;
